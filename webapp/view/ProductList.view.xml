@@ -52,7 +52,7 @@
                 growing="true"
                 growingThreshold="10"
                 growingScrollToLoad="true"
-                mode="None"
+                mode="MultiSelect"
                 inset="false">
 
                 <headerToolbar>

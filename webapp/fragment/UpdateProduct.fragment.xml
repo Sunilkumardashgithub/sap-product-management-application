@@ -1,0 +1,69 @@
+
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core">
+
+    <Dialog
+        id="updateProductDialog"
+        title="Update Product"
+        contentWidth="450px"
+        draggable="true"
+        resizable="true">
+
+        <content>
+            <VBox class="sapUiMediumMargin" gap="0.5rem">
+
+                <Label text="Product ID"/>
+                <Input
+                    id="updateProductId"
+                    editable="false"/>
+
+                <Label text="Product Name" required="true"/>
+                <Input
+                    id="updateProductName"
+                    placeholder="Enter product name"/>
+
+                <Label text="Description" required="true"/>
+                <TextArea
+                    id="updateProductDescription"
+                    rows="2"
+                    placeholder="Enter description"/>
+
+                <Label text="Release Date" required="true"/>
+                <DatePicker
+                    id="updateProductReleaseDate"
+                    valueFormat="yyyy-MM-dd"
+                    displayFormat="dd-MM-yyyy"
+                    placeholder="Select release date"/>
+
+                <Label text="Rating" required="true"/>
+                <Input
+                    id="updateProductRating"
+                    type="Number"
+                    placeholder="Enter rating (0-5)"/>
+
+                <Label text="Price" required="true"/>
+                <Input
+                    id="updateProductPrice"
+                    type="Number"
+                    placeholder="Enter price"/>
+
+            </VBox>
+        </content>
+
+        <beginButton>
+            <Button
+                text="Save Changes"
+                type="Emphasized"
+                press=".onUpdateProductSave"/>
+        </beginButton>
+
+        <endButton>
+            <Button
+                text="Cancel"
+                press=".onUpdateProductCancel"/>
+        </endButton>
+
+    </Dialog>
+
+</core:FragmentDefinition>
