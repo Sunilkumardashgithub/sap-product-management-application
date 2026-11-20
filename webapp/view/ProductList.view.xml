@@ -1,0 +1,164 @@
+
+<mvc:View
+    controllerName="nw.productmanagement.controller.ProductList"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+
+    <Page
+        id="productListPage"
+        title="Product Management">
+
+        <content>
+
+            <!-- Filter Bar -->
+            <VBox class="sapUiSmallMargin">
+
+                <Label
+                    text="Product"
+                    labelFor="productFilter"/>
+
+                <HBox
+                    alignItems="Center"
+                    width="100%">
+
+                    <MultiInput
+                        id="productFilter"
+                        width="100%"
+                        placeholder="Select multiple products"
+                        showValueHelp="true"
+                        valueHelpRequest=".onProductValueHelp"/>
+
+                    <Button
+                        text="Go"
+                        type="Emphasized"
+                        icon="sap-icon://search"
+                        press=".onGo"
+                        class="sapUiTinyMarginBegin"/>
+
+                    <Button
+                        text="Clear"
+                        icon="sap-icon://clear-filter"
+                        press=".onClear"
+                        class="sapUiTinyMarginBegin"/>
+
+                </HBox>
+
+            </VBox>
+
+            <!-- Product Table -->
+            <Table
+                id="productTable"
+                items="{/Products}"
+                growing="true"
+                growingThreshold="10"
+                growingScrollToLoad="true"
+                mode="None"
+                inset="false">
+
+                
+            <headerToolbar>
+                <OverflowToolbar>
+
+                    <Title
+                        text="Products"
+                        level="H2"/>
+
+                    <ToolbarSpacer/>
+
+                    <Text
+                        id="productCount"
+                        text=""/>
+
+                    <Button
+                        id="createButton"
+                        text="Create"
+                        icon="sap-icon://add"
+                        type="Emphasized"
+                        press=".onCreate"/>
+
+                    <Button
+                        id="updateButton"
+                        text="Update"
+                        icon="sap-icon://edit"
+                        press=".onUpdate"/>
+
+                    <Button
+                        id="deleteButton"
+                        text="Delete"
+                        icon="sap-icon://delete"
+                        type="Reject"
+                        press=".onDelete"/>
+
+                </OverflowToolbar>
+            </headerToolbar>
+
+
+                <columns>
+
+                    <Column>
+                        <Text text="Product ID"/>
+                    </Column>
+
+                    <Column>
+                        <Text text="Product Name"/>
+                    </Column>
+
+                    <Column>
+                        <Text text="Description"/>
+                    </Column>
+
+                    <Column>
+                        <Text text="Release Date"/>
+                    </Column>
+
+                    <Column hAlign="End">
+                        <Text text="Price"/>
+                    </Column>
+
+                    <Column hAlign="Center">
+                        <Text text="Rating"/>
+                    </Column>
+
+                </columns>
+
+                <items>
+
+                    <ColumnListItem>
+
+                        <cells>
+
+                            <Text text="{ID}"/>
+
+                            <Text text="{Name}"/>
+
+                            <Text text="{Description}"/>
+
+                            <Text
+                                text="{
+                                    path: 'ReleaseDate',
+                                    formatter: '.formatter.formatReleaseDate'
+                                }"/>
+
+                            <ObjectNumber
+                                number="{Price}"/>
+
+                            <!-- <ObjectStatus
+                                text="{Rating}"
+                                state="{
+                                    path: 'Rating',
+                                    formatter: '.formatter.ratingState'
+                                }"/> -->
+
+                        </cells>
+
+                    </ColumnListItem>
+
+                </items>
+
+            </Table>
+
+        </content>
+
+    </Page>
+
+</mvc:View>
