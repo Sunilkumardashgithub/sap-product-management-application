@@ -10,7 +10,7 @@
 
         <content>
 
-            <!-- Filter Bar -->
+            <!-- Product Filter -->
             <VBox class="sapUiSmallMargin">
 
                 <Label
@@ -55,43 +55,43 @@
                 mode="None"
                 inset="false">
 
-                
-            <headerToolbar>
-                <OverflowToolbar>
+                <headerToolbar>
 
-                    <Title
-                        text="Products"
-                        level="H2"/>
+                    <OverflowToolbar>
 
-                    <ToolbarSpacer/>
+                        <Title
+                            text="Products"
+                            level="H2"/>
 
-                    <Text
-                        id="productCount"
-                        text=""/>
+                        <ToolbarSpacer/>
 
-                    <Button
-                        id="createButton"
-                        text="Create"
-                        icon="sap-icon://add"
-                        type="Emphasized"
-                        press=".onCreate"/>
+                        <Text
+                            id="productCount"
+                            text=""/>
 
-                    <Button
-                        id="updateButton"
-                        text="Update"
-                        icon="sap-icon://edit"
-                        press=".onUpdate"/>
+                        <Button
+                            id="createButton"
+                            text="Create"
+                            icon="sap-icon://add"
+                            type="Emphasized"
+                            press=".onCreate"/>
 
-                    <Button
-                        id="deleteButton"
-                        text="Delete"
-                        icon="sap-icon://delete"
-                        type="Reject"
-                        press=".onDelete"/>
+                        <Button
+                            id="updateButton"
+                            text="Update"
+                            icon="sap-icon://edit"
+                            press=".onUpdate"/>
 
-                </OverflowToolbar>
-            </headerToolbar>
+                        <Button
+                            id="deleteButton"
+                            text="Delete"
+                            icon="sap-icon://delete"
+                            type="Reject"
+                            press=".onDelete"/>
 
+                    </OverflowToolbar>
+
+                </headerToolbar>
 
                 <columns>
 
@@ -112,11 +112,11 @@
                     </Column>
 
                     <Column hAlign="End">
-                        <Text text="Price"/>
+                        <Text text="Rating"/>
                     </Column>
 
                     <Column hAlign="Center">
-                        <Text text="Rating"/>
+                        <Text text="Price"/>
                     </Column>
 
                 </columns>
@@ -140,14 +140,10 @@
                                 }"/>
 
                             <ObjectNumber
-                                number="{Price}"/>
+                                number="{Rating}"/>
 
-                            <!-- <ObjectStatus
-                                text="{Rating}"
-                                state="{
-                                    path: 'Rating',
-                                    formatter: '.formatter.ratingState'
-                                }"/> -->
+                            <ObjectNumber
+                                number="{Price}"/>
 
                         </cells>
 

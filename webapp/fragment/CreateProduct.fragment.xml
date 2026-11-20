@@ -1,0 +1,102 @@
+
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core">
+
+    <Dialog
+        id="createProductDialog"
+        title="Create Product"
+        contentWidth="35rem"
+        stretchOnPhone="true"
+        draggable="true"
+        resizable="true">
+
+        <content>
+
+            <VBox class="sapUiMediumMargin">
+
+                <!-- Product Name -->
+                <Label
+                    text="Product Name"
+                    required="true"/>
+
+                <Input
+                    id="productName"
+                    placeholder="Enter product name"
+                    maxLength="40"/>
+
+
+                <!-- Description -->
+                <Label
+                    text="Description"
+                    required="true"
+                    class="sapUiSmallMarginTop"/>
+
+                <TextArea
+                    id="productDescription"
+                    placeholder="Enter product description"
+                    rows="3"
+                    maxLength="200"/>
+
+
+                <!-- Release Date -->
+                <Label
+                    text="Release Date"
+                    required="true"
+                    class="sapUiSmallMarginTop"/>
+
+                <DatePicker
+                    id="productReleaseDate"
+                    placeholder="Select release date"
+                    displayFormat="medium"
+                    valueFormat="yyyy-MM-dd"/>
+
+
+                <!-- Rating -->
+                <Label
+                    text="Rating"
+                    required="true"
+                    class="sapUiSmallMarginTop"/>
+
+                <Input
+                    id="productRating"
+                    type="Number"
+                    placeholder="Enter rating (0-5)"/>
+
+
+                <!-- Price -->
+                <Label
+                    text="Price"
+                    required="true"
+                    class="sapUiSmallMarginTop"/>
+
+                <Input
+                    id="productPrice"
+                    type="Number"
+                    placeholder="Enter product price"/>
+
+            </VBox>
+
+        </content>
+
+        <beginButton>
+
+            <Button
+                text="Create"
+                type="Emphasized"
+                icon="sap-icon://add"
+                press=".onCreateProductSave"/>
+
+        </beginButton>
+
+        <endButton>
+
+            <Button
+                text="Cancel"
+                press=".onCreateProductCancel"/>
+
+        </endButton>
+
+    </Dialog>
+
+</core:FragmentDefinition>
