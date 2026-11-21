@@ -1,0 +1,99 @@
+
+<mvc:View
+    controllerName="nw.productmanagement.controller.ProductDetail"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+
+    <Page
+        title="Product Details"
+        showNavButton="true"
+        navButtonPress=".onNavBack">
+
+        <content>
+
+            <ObjectHeader
+                title="{Name}"
+                number="{Price}"
+                numberUnit="Price"
+                intro="Product ID: {ID}">
+
+                <attributes>
+                    <ObjectAttribute
+                        title="Description"
+                        text="{Description}" />
+
+                    <ObjectAttribute
+                        title="Rating"
+                        text="{Rating}" />
+
+                    <ObjectAttribute
+                        title="Release Date"
+                        text="{ReleaseDate}" />
+
+                    <ObjectAttribute
+                        title="Discontinued Date"
+                        text="{DiscontinuedDate}" />
+                </attributes>
+            </ObjectHeader>
+
+            <Panel
+                headerText="Category Details"
+                class="sapUiResponsiveMargin"
+                width="auto">
+
+                <content>
+                    <ObjectAttribute
+                        title="Category ID"
+                        text="{Category/ID}" />
+
+                    <ObjectAttribute
+                        title="Category Name"
+                        text="{Category/Name}" />
+
+                    <ObjectAttribute
+                        title="Description"
+                        text="{Category/Description}" />
+                </content>
+            </Panel>
+
+            <Panel
+                headerText="Supplier Details"
+                class="sapUiResponsiveMargin"
+                width="auto">
+
+                <content>
+                    <ObjectAttribute
+                        title="Supplier ID"
+                        text="{Supplier/ID}" />
+
+                    <ObjectAttribute
+                        title="Company Name"
+                        text="{Supplier/CompanyName}" />
+
+                    <ObjectAttribute
+                        title="Contact Name"
+                        text="{Supplier/ContactName}" />
+
+                    <ObjectAttribute
+                        title="Contact Title"
+                        text="{Supplier/ContactTitle}" />
+
+                    <ObjectAttribute
+                        title="City"
+                        text="{Supplier/City}" />
+
+                    <ObjectAttribute
+                        title="Country"
+                        text="{Supplier/Country}" />
+
+                    <ObjectAttribute
+                        title="Phone"
+                        text="{Supplier/Phone}" />
+                </content>
+            </Panel>
+
+        </content>
+
+    </Page>
+
+</mvc:View>

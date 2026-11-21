@@ -708,7 +708,35 @@ sap.ui.define([
                         }
                     }
                 );
-            }
+            },
+
+
+            onProductPress: function (oEvent) {
+
+                // Get the clicked row
+                var oSelectedItem = oEvent.getSource();
+
+                // Get selected product details
+                var oContext = oSelectedItem.getBindingContext();
+
+                var oProduct = oContext.getObject();
+
+                // Navigate to Product Detail page
+                this.getOwnerComponent()
+                    .getRouter()
+                    .navTo("ProductDetail", {
+                        productId: oProduct.ID
+                    });
+            },
+
+            formatRatingState: function (iRating) {
+                if (iRating <= 3) {
+                    return "Error";      // Red
+                }
+
+                return "Success";       // Green
+            },
+
 
 
         }

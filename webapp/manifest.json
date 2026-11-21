@@ -98,12 +98,22 @@
           "target": [
             "TargetProductList"
           ]
+        },
+        {
+            "name": "ProductDetail",
+            "pattern": "product/{productId}",
+            "target": "ProductDetail"
         }
       ],
       "targets": {
         "TargetProductList": {
           "id": "ProductList",
           "name": "ProductList"
+        },
+        "ProductDetail": {
+            "name": "ProductDetail",
+            "id": "ProductDetail",
+            "viewLevel": 2
         }
       }
     },
