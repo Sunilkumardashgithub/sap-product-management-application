@@ -35,9 +35,9 @@ sap.ui.define([
                 var oView = this.getView();
 
                 // Load fragment only once
-                if (!this._oProductValueHelpDialog) {
+                if (!this.oProductValueHelpDialog) {
 
-                    this._oProductValueHelpDialog =
+                    this.oProductValueHelpDialog =
                         await Fragment.load({
 
                             id: oView.getId(),
@@ -50,21 +50,21 @@ sap.ui.define([
 
                     // Connect fragment with view
                     oView.addDependent(
-                        this._oProductValueHelpDialog
+                        this.oProductValueHelpDialog
                     );
 
                 }
 
                 // Remove previous search filter
                 var oBinding =
-                    this._oProductValueHelpDialog.getBinding("items");
+                    this.oProductValueHelpDialog.getBinding("items");
 
                 if (oBinding) {
                     oBinding.filter([]);
                 }
 
                 // Open dialog
-                this._oProductValueHelpDialog.open();
+                this.oProductValueHelpDialog.open();
 
             },
 
@@ -140,12 +140,7 @@ sap.ui.define([
             },
 
 
-            // 4. Cancel Value Help Dialog
-            onProductValueHelpCancel: function () {
-
-                // No action required
-
-            },
+           
 
 
             // 5. Go Button - Filter Product Table
@@ -241,9 +236,9 @@ sap.ui.define([
                 var oView = this.getView();
 
                 // Load fragment only once
-                if (!this._oCreateProductDialog) {
+                if (!this.oCreateProductDialog) {
 
-                    this._oCreateProductDialog =
+                    this.oCreateProductDialog =
                         await Fragment.load({
 
                             id: oView.getId(),
@@ -255,12 +250,12 @@ sap.ui.define([
                         });
 
                     // Connect dialog with view
-                    oView.addDependent(this._oCreateProductDialog);
+                    oView.addDependent(this.oCreateProductDialog);
 
                 }
 
                 // Open dialog
-                this._oCreateProductDialog.open();
+                this.oCreateProductDialog.open();
 
             },
 
@@ -296,6 +291,20 @@ sap.ui.define([
                     "productPrice"
                 ).getValue();
 
+                var iCategoryId = Number(
+                    Fragment.byId(
+                        oView.getId(),
+                        "createProductCategory"
+                    ).getSelectedKey()
+                );
+
+                var iSupplierId = Number(
+                    Fragment.byId(
+                        oView.getId(),
+                        "createProductSupplier"
+                    ).getSelectedKey()
+                );
+
                 // Validation
                 if (
                     !sName ||
@@ -328,7 +337,7 @@ sap.ui.define([
                 }
 
                 var oModel = this.getView().getModel();
-                var oDialog = this._oCreateProductDialog;
+                var oDialog = this.oCreateProductDialog;
 
                 oDialog.setBusy(true);
 
@@ -355,7 +364,18 @@ sap.ui.define([
                             Description: sDescription,
                             ReleaseDate: oReleaseDate,
                             Rating: iRating,
-                            Price: String(fPrice)
+                            Price: String(fPrice),
+                            Category: {
+                                __metadata: {
+                                    uri: "Categories(" + iCategoryId + ")"
+                                }
+                            },
+
+                            Supplier: {
+                                __metadata: {
+                                    uri: "Suppliers(" + iSupplierId + ")"
+                                }
+                            }
                         };
 
                         console.log("Create Product Payload:", oPayload);
@@ -420,7 +440,7 @@ sap.ui.define([
             // 9. Cancel Create Product
             onCreateProductCancel: function () {
 
-                this._oCreateProductDialog.close();
+                this.oCreateProductDialog.close();
 
             },
 

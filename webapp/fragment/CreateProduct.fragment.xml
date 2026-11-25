@@ -25,6 +25,33 @@
                     placeholder="Enter product name"
                     maxLength="40"/>
 
+                <Label text="Category"/>
+
+                <Select
+                    id="createProductCategory"
+                    width="100%"
+                    items="{/Categories}">
+
+                    <core:Item
+                        key="{ID}"
+                        text="{Name}"/>
+
+                </Select>
+
+
+                <Label text="Supplier"/>
+
+                <Select
+                    id="createProductSupplier"
+                    width="100%"
+                    items="{/Suppliers}">
+
+                    <core:Item
+                        key="{ID}"
+                        text="{Name}"/>
+
+                </Select>    
+
 
                 <!-- Description -->
                 <Label

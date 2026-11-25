@@ -30,9 +30,9 @@
                         title="Release Date"
                         text="{ReleaseDate}" />
 
-                    <ObjectAttribute
+                    <!-- <ObjectAttribute
                         title="Discontinued Date"
-                        text="{DiscontinuedDate}" />
+                        text="{DiscontinuedDate}" /> -->
                 </attributes>
             </ObjectHeader>
 
@@ -50,9 +50,9 @@
                         title="Category Name"
                         text="{Category/Name}" />
 
-                    <ObjectAttribute
+                    <!-- <ObjectAttribute
                         title="Description"
-                        text="{Category/Description}" />
+                        text="{Category/Description}" /> -->
                 </content>
             </Panel>
 
@@ -68,27 +68,27 @@
 
                     <ObjectAttribute
                         title="Company Name"
-                        text="{Supplier/CompanyName}" />
+                        text="{Supplier/Name}" />
 
-                    <ObjectAttribute
-                        title="Contact Name"
-                        text="{Supplier/ContactName}" />
-
-                    <ObjectAttribute
-                        title="Contact Title"
-                        text="{Supplier/ContactTitle}" />
-
-                    <ObjectAttribute
+                     <ObjectAttribute
                         title="City"
-                        text="{Supplier/City}" />
+                        text="{Supplier/Address/City}" />
 
                     <ObjectAttribute
                         title="Country"
-                        text="{Supplier/Country}" />
+                        text="{Supplier/Address/Country}" />
 
                     <ObjectAttribute
-                        title="Phone"
-                        text="{Supplier/Phone}" />
+                        title="Street"
+                        text="{Supplier/Address/Street}" />
+
+                    <ObjectAttribute
+                        title="State"
+                        text="{Supplier/Address/State}" />
+
+                    <ObjectAttribute
+                        title="Zip Code"
+                        text="{Supplier/Address/ZipCode}" />
                 </content>
             </Panel>
 

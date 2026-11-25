@@ -10,7 +10,7 @@ sap.ui.define([
         "nw.productmanagement.controller.ProductDetail",
         {
 
-            onInit: function () {
+            onInit: function () { 
 
                 var oRouter = UIComponent.getRouterFor(this);
 

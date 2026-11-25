@@ -23,6 +23,28 @@
                     id="updateProductName"
                     placeholder="Enter product name"/>
 
+                <Label text="Category" required="true"/>
+                <Select
+                    id="updateProductCategory"
+                    width="100%"
+                    selectedKey=""
+                    items="{/Categories}">
+                    <core:Item
+                        key="{ID}"
+                        text="{Name}"/>
+                </Select>
+
+                <Label text="Supplier" required="true"/>
+                <Select
+                    id="updateProductSupplier"
+                    width="100%"
+                    selectedKey=""
+                    items="{/Suppliers}">
+                    <core:Item
+                        key="{ID}"
+                        text="{Name}"/>
+                </Select>    
+
                 <Label text="Description" required="true"/>
                 <TextArea
                     id="updateProductDescription"
@@ -53,7 +75,7 @@
 
         <beginButton>
             <Button
-                text="Save Changes"
+                text="Update"
                 type="Emphasized"
                 press=".onUpdateProductSave"/>
         </beginButton>
